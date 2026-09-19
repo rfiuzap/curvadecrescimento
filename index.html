@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curva de Crescimento Infantil</title>
+  <meta name="description" content="Acompanhe peso, altura e crescimento infantil com referências da Organização Mundial da Saúde.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23ee8f76'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='40' fill='white'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260920">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">✦</span><span>Cresce<span>Bem</span></span></div>
+      <div class="profile-switcher">
+        <div class="avatar" id="sidebarAvatar">LM</div>
+        <div><strong id="sidebarName">Lia Martins</strong><small id="sidebarAge">3 anos e 4 meses</small></div>
+        <button class="icon-button" id="profileToggle" aria-label="Trocar criança">⌄</button>
+      </div>
+      <div class="profile-menu" id="profileMenu" hidden></div>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <button class="nav-item active" data-view="overview"><span>⌂</span> Visão geral</button>
+        <button class="nav-item" data-view="measurements"><span>⌁</span> Medições</button>
+        <button class="nav-item" data-view="child"><span>♙</span> Dados da criança</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="tip-card"><span class="tip-icon">♥</span><strong>Acompanhar é cuidar</strong><p id="tipText"></p></div>
+        <button class="nav-item" id="logout"><span>↪</span> Sair</button>
+        <small class="version">CresceBem · v1.0</small>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="topbar"><div class="mobile-brand">✦ Cresce<span>Bem</span></div><div class="guest-topbar" id="guestTopbar" hidden><span>Você não está logado. Seus dados não serão salvos na sua conta.</span><form id="guestAuthForm"><input id="guestEmail" type="email" aria-label="E-mail" placeholder="E-mail" autocomplete="email" required><input id="guestPassword" type="password" aria-label="Senha" placeholder="Senha" autocomplete="current-password" required><button class="button" type="submit">Entrar</button><button class="button secondary" type="button" id="guestRegister">Criar conta</button></form></div><div class="user-topbar" id="userTopbar" hidden><strong id="userEmail"></strong><button class="button secondary" id="topbarLogout">Sair</button></div></header>
+      <div id="app"></div>
+    </main>
+  </div>
+  <script>window.turnstileReady = () => window.dispatchEvent(new Event('turnstile-ready'));</script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=turnstileReady&render=explicit" async defer></script>
+  <script src="app.js?v=20260927"></script>
+</body>
+</html>
